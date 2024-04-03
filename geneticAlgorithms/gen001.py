@@ -1,10 +1,10 @@
 import random
 
 POPULATION_SIZE = 100
-GENOME_LENGTH = 20
+GENOME_LENGTH = 50
 MUTATION_RATE = 0.01
 CROSSOVER_RATE = 0.7
-GENERATIONS = 200
+GENERATIONS = 2000
 
 
 def random_genome(length):
@@ -30,7 +30,7 @@ def select_parent(population, fitness_values):
 
 
 def crossover(parent1, parent2):
-    if random.random() < MUTATION_RATE:
+    if random.random() < CROSSOVER_RATE:
         crossover_point = random.randint(1, len(parent1) - 1)
         return (parent1[:crossover_point]
                 + parent2[crossover_point:], parent2[:crossover_point] + parent1[crossover_point:])
